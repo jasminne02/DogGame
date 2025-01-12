@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">DogGame</string>
+    <string name="register">Register</string>
+    <string name="log_in">Log in</string>
+    <string name="required_fields_message">Fields with * are required</string>
+    <string name="invalid_username_message">This username is already taken</string>
+    <string name="invalid_password_message">The password must contains at least 8 characters
+        including a small letter, a capital letter and a number</string>
+    <string name="unequal_passwords_message">The passwords are not the same</string>
+    <string name="not_existing_user_message">This username does not exist</string>
+    <string name="wrong_password_message">The entered password is invalid</string>
+    <string name="wrong_current_password">The current password is wrong</string>
+    <string name="select_option">Select an option:</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="start_game">Start Game</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="game_over">Game Over</string>
+    <string name="profile">Profile</string>
+    <string name="change_username">Change Username</string>
+    <string name="change_password">Change Password</string>
+    <string name="change">Change</string>
+    <string name="delete_profile">Delete Profile</string>
+    <string name="logout">Log out</string>
+    <string name="set_avatar">Set Avatar</string>
+    <string name="get_avatar">Get Avatar</string>
+    <string name="avatar_image">Avatar Image</string>
+    <string name="username">Username</string>
+    <string name="best_score">Best Score</string>
+    <string name="score">Score</string>
+    <string name="delete_profile_message">Are you sure you want to delete your profile?</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_log_in">LogInActivity</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_activity_start_game">StartGameActivity</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_activity_edit_profile">EditProfileActivity</string>
+    <string name="title_activity_set_avatar">SetAvatarActivity</string>
+    <string name="title_activity_change_password">ChangePasswordActivity</string>
+    <string name="title_activity_change_username">ChangeUsernameActivity</string>
+    <string name="title_activity_delete_profile">DeleteProfileActivity</string>
+    <string name="title_activity_game_over">GameOverActivity</string>
+</resources>
