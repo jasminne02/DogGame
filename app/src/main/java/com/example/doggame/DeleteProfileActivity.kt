@@ -133,7 +133,7 @@ fun deleteUser(context: Context) {
     try {
         LoggedUser.getUsername()?.let { userDao.deleteUser(it) }
     } catch (e: Exception) {
-        Log.e("DatabaseError", "Error reading from database", e)
+        Log.e("DatabaseError", "Error deleting from database", e)
     }
 
     LoggedUser.logout()

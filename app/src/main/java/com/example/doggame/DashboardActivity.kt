@@ -108,7 +108,7 @@ fun Dashboard(modifier: Modifier = Modifier) {
     val context = LocalContext.current
 
     val avatarResource = painterResource(R.drawable.default_avatar)
-    val users = getAllUsers(context)?.sortedBy { it.bestScore }
+    val users = getAllUsers(context)?.sortedByDescending { it.bestScore }
 
     Column(
         modifier = modifier,

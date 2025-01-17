@@ -163,7 +163,7 @@ fun createUser(username: String, password: String, context: Context){
     try {
         userDao.insert(user)
     } catch (e: Exception) {
-        Log.e("DatabaseError", "Error reading from database", e)
+        Log.e("DatabaseError", "Error writing to database", e)
     }
 
     LoggedUser.login(user)

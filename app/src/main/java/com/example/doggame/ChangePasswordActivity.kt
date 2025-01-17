@@ -157,7 +157,7 @@ fun changePassword(password: String, context: Context) {
     try {
         LoggedUser.getUsername()?.let { userDao.updateUserPassword(it, password) }
     } catch (e: Exception) {
-        Log.e("DatabaseError", "Error reading from database", e)
+        Log.e("DatabaseError", "Error writing to database", e)
     }
 
     LoggedUser.setPassword(password)

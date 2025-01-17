@@ -27,6 +27,7 @@
     <string name="username">Username</string>
     <string name="best_score">Best Score</string>
     <string name="score">Score</string>
+    <string name="missed_gifts">Missed gifts</string>
     <string name="delete_profile_message">Are you sure you want to delete your profile?</string>
     <string name="title_activity_register">RegisterActivity</string>
     <string name="title_activity_log_in">LogInActivity</string>

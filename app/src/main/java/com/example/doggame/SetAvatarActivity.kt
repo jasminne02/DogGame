@@ -166,7 +166,7 @@ fun changeUserAvatar(avatarImage: Bitmap, context: Context) {
     try {
         LoggedUser.getUsername()?.let { userDao.updateUserAvatar(it, image) }
     } catch (e: Exception) {
-        Log.e("DatabaseError", "Error reading from database", e)
+        Log.e("DatabaseError", "Error writing to database", e)
     }
 
     LoggedUser.setAvatarImage(avatarImage)

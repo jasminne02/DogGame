@@ -1,7 +1,9 @@
 package com.example.doggame
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -23,6 +25,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.doggame.datamanager.AppDatabase
 import com.example.doggame.datamanager.LoggedUser
 import com.example.doggame.ui.theme.DogGameTheme
 
@@ -63,7 +66,8 @@ fun GameOverMenuButtons(modifier: Modifier = Modifier) {
     var userBestScore = LoggedUser.getBestScore()
     val userLastScore = LoggedUser.getLastScore()
 
-    if (userBestScore == 0) userBestScore = userLastScore!!
+    if (userBestScore < userLastScore!!) userBestScore = userLastScore
+    saveBestScore(context, userBestScore)
 
     Column(
         modifier = modifier,
@@ -84,7 +88,6 @@ fun GameOverMenuButtons(modifier: Modifier = Modifier) {
 
         Button(
             onClick = {
-                LoggedUser.logout()
                 context.startActivity(Intent(context, StartGameActivity::class.java))
             }
         ) {
@@ -99,4 +102,17 @@ fun GameOverMenuButtons(modifier: Modifier = Modifier) {
             Text(text = stringResource(R.string.main_menu), fontSize = 20.sp)
         }
     }
+}
+
+fun saveBestScore(context: Context, bestScore: Int) {
+    val db = AppDatabase.getInstance(context)
+    val userDao = db.userDAO()
+
+    try {
+        LoggedUser.getUsername()?.let { userDao.updateUserBestScore(it, bestScore) }
+    } catch (e: Exception) {
+        Log.e("DatabaseError", "Error writing to database", e)
+    }
+
+    LoggedUser.setBestScore(bestScore)
 }

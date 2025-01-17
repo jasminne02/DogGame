@@ -24,6 +24,9 @@ interface UserDAO {
     @Query("UPDATE user SET avatarImage = :avatarImage WHERE username LIKE :username")
     fun updateUserAvatar(username: String, avatarImage: ByteArray)
 
+    @Query("UPDATE user SET bestScore = :bestScore WHERE username LIKE :username")
+    fun updateUserBestScore(username: String, bestScore: Int)
+
     @Query("DELETE FROM user WHERE username = :username")
     fun deleteUser(username: String)
 
